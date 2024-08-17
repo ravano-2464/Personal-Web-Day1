@@ -4,7 +4,7 @@
 <head>
     <title>Personal Web</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="assets/icon/dumbways.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icon/dumbways.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -19,9 +19,9 @@
 
             <h1 style="font-family: monospace; font-size: 34px;">Hi, Welcome To My First Web!</h1>
             <p style="font-family: monospace; font-size: 17px; text-align: justify;">
-                Halo, Perkenalkan Nama Saya Ravano Akbar Widodo. Saya Berusia 18 Tahun Tinggal Di Daerah Kreo Selatan, Tangerang. Saya Memiliki Ketertarikan Di Dunia Teknologi Informasi. 
-                Saya Bercita-Cita Untuk Menjadi Seorang Full-Stack Developer Dan Mendalami Berbagai Aspek Pengembangan Perangkat Lunak. 
-                Saya Mengetahui Program Bootcamp Ini Melalui Penjelajahan Saya Di Internet Dan Merasa Sangat Antusias Untuk Belajar Lebih Lanjut Dalam Perjalanan Karier Saya Di Dunia Teknologi.
+               👋🏻 Hello, My Name is Ravano Akbar Widodo. I am <span id="age"></span> years old and currently residing in Kreo Selatan, Tangerang. I have a strong interest in the field of Information Technology.
+                I aspire to become a Full-Stack Developer and to deepen my knowledge in various aspects of software development.
+                I discovered this Bootcamp Program through my exploration on the internet and I am very excited to learn more as I pursue my career in the technology industry.
             </p>
             <br>
             <div>
@@ -36,7 +36,7 @@
                 <div>
                     <a href="your_cv_link.pdf" target="_blank">
                         <button style="border: none; background-color: transparent; font-size: 20px; font-family: monospace; color: black; text-decoration: underline; cursor: pointer;">
-                            <img src="assets/image/download.png" alt="Download Icon" style="vertical-align: middle; margin-right: 5px;" width="30px"> Download CV
+                            <img src="./assets/image/download.png" alt="Download Icon" style="vertical-align: middle; margin-right: 5px;" width="30px"> Download CV
                         </button>
                     </a>
                 </div>
@@ -50,10 +50,22 @@
                 a:hover {
                     text-decoration: none; 
                 }
+
+                .sosmed-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px; 
+                    margin-top: 5rem;
+                }
+
+                .sosmed-group {
+                    display: flex;
+                    gap: 10px;  
+                }
             </style>
             
-            <div style="text-align: center;">
-                <div>
+            <div class="sosmed-container">
+                <div class="sosmed-group">
                     <a href="https://wa.me/6285697572220/" target="_blank">
                         <i class="fa fa-whatsapp" style="font-size: 44px; color: #25d366;"></i>
                     </a>
@@ -66,17 +78,21 @@
                     <a href="https://www.instagram.com/ravanoakbarwidodo/" target="_blank">
                         <i class="fa fa-instagram" style="font-size: 44px; color: #E4405F;"></i>
                     </a>
+                </div>
+                <div class="sosmed-group">
                     <a href="https://twitter.com/5044Ravano/" target="_blank">
                         <i class="fa fa-twitter" style="font-size: 44px; color: #1DA1F2;"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@ravanowidodo/" target="_blank">
-                        <i class="fa fa-tiktok" style="font-size: 44px; color: #000000;"></i>
                     </a>
                     <a href="https://github.com/ravano-2464/" target="_blank">
                         <i class="fa fa-github" style="font-size: 44px; color: #000000;"></i>
                     </a>
                 </div>
-            </style>
+                <div class="sosmed-group">
+                    <a href="https://www.tiktok.com/@ravanowidodo/" target="_blank">
+                        <i class="fa fa-tiktok" style="font-size: 44px; color: #000000;"></i>
+                    </a>
+                </div>
+            </div>
                 <br>
                 <br>
                 <div>
@@ -97,5 +113,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const birthDate = new Date('2005-01-01'); 
+
+        function calculateAge(date) {
+            const today = new Date();
+            let age = today.getFullYear() - date.getFullYear();
+            const monthDiff = today.getMonth() - date.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < date.getDate())) {
+                age--;
+            }
+
+            return age;
+        }
+
+        document.getElementById('age').innerText = calculateAge(birthDate);
+    </script>
+
 </body>
 </html>
